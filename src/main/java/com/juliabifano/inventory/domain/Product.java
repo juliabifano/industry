@@ -3,19 +3,21 @@ package com.juliabifano.inventory.domain;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
+import java.time.LocalDateTime;
 
 @Entity
-public class Product {
+public class Product extends PanacheEntity {
 
-    @Id
-    @GeneratedValue
-    public Long id;
-
-    @NotBlank(message = "Name is required")
+    @NotBlank
     public String name;
 
-    @NotNull(message = "Price is required")
-    @Positive(message = "Price must be positive")
-    public Double price;
+    @Positive
+    public double price;
+
+    @PositiveOrZero
+    public int quantity;
+
+    public LocalDateTime createdAt;
 }
