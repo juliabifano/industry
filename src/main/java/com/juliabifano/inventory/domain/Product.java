@@ -2,12 +2,20 @@ package com.juliabifano.inventory.domain;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;
-import java.math.BigDecimal;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-public class Product extends PanacheEntity {
+@Entity
+public class Product {
 
-    public String code;
+    @Id
+    @GeneratedValue
+    public Long id;
+
+    @NotBlank(message = "Name is required")
     public String name;
-    public BigDecimal price;
 
+    @NotNull(message = "Price is required")
+    @Positive(message = "Price must be positive")
+    public Double price;
 }

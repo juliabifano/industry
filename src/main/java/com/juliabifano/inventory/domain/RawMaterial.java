@@ -2,11 +2,15 @@ package com.juliabifano.inventory.domain;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;
-import java.math.BigDecimal;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
+@Entity
 public class RawMaterial extends PanacheEntity {
 
-    public String code;
+    @NotBlank
     public String name;
-    public BigDecimal stockQuantity;
+
+    @NotNull
+    public Double stockQuantity;
 }
