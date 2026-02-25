@@ -57,23 +57,27 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Produtos</h1>
+    <main>
+      <header className="header">SISTEMA DE INVENTÁRIO</header>
 
-      {message && <p>{message}</p>}
+      <div className="container">
+        <h3>Adicionar Produto</h3>
+        <div className="input-container">
+          <input
+            placeholder="Nome"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            placeholder="Preço"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <button className="btn-add" onClick={addProduct}>Salvar</button>
+        </div>
+      </div>
 
-      <h3>Adicionar Produto</h3>
-      <input
-        placeholder="Nome"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        placeholder="Preço"
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
-      />
-      <button onClick={addProduct}>Salvar</button>
+      {message && <p className="msg-success">{message}</p>}
 
       <ul>
         {products.map((p) => (
@@ -86,7 +90,6 @@ function App() {
         {editingProduct && (
           <div>
             <h3>Editar produto</h3>
-
             <input
               value={editingProduct.name}
               onChange={(e) =>
@@ -98,7 +101,10 @@ function App() {
               type="number"
               value={editingProduct.price}
               onChange={(e) =>
-                setEditingProduct({ ...editingProduct, price: e.target.value })
+                setEditingProduct({
+                  ...editingProduct,
+                  price: e.target.value,
+                })
               }
             />
 
@@ -108,7 +114,7 @@ function App() {
           </div>
         )}
       </ul>
-    </div>
+    </main>
   );
 }
 
