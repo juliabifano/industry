@@ -79,13 +79,14 @@ function App() {
 
       {message && <p className="msg-success">{message}</p>}
 
-      <ul>
+      <ul >
         {products.map((p) => (
-          <li key={p.id}>
-            {p.name} — R$ {p.price}
-            <button onClick={() => setEditingProduct(p)}>Editar</button>
-            <button onClick={() => deleteProduct(p.id)}>Deletar</button>
-          </li>
+          <div className="card-products">
+          <li  key={p.id}>
+            {p.name} <hr /> <p className="card-title">Preço </p>R$ {p.price} <br />
+            <button className="btn-edit" onClick={() => setEditingProduct(p)}>Editar</button>
+            <button className="btn-delete" onClick={() => deleteProduct(p.id)}>Deletar</button>
+          </li></div>
         ))}
         {editingProduct && (
           <div>

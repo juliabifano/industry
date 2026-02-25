@@ -13,6 +13,13 @@ body {
   background-size: auto;
 }
 
+ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
 .header {
   font-family: "Passion One", sans-serif;
   font-weight: 700;
@@ -31,6 +38,7 @@ body {
   margin: 0 auto;
   margin-top: 10px;
   padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .input-container {
@@ -86,4 +94,52 @@ body {
   text-align: center;
   padding: 16px;
   font-weight: 700;
+  color: #1c502d;
+  box-sizing: border-box;
+}
+
+.card-products {
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #b3b3ac;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 150px;
+  justify-content: center;
+}
+
+.card-products hr {
+  width: 120px;
+  background-color: #757575;
+  height: 2px;
+  border: none;
+  border-radius: 2px;
+}
+
+li {
+  background-color: transparent;
+  height: 50px;
+  justify-content: space-between;
+  display: inline-block;
+}
+
+.card-products button {
+  border-radius: 8px;
+  height: 32px;
+  border: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.card-title,
+.card-products p.name {
+  background-color: transparent;
+  font-weight: 700;
+}
+
+.btn-edit {
+  background-color: #221f1f;
+  color: #ccc;
 }
