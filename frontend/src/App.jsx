@@ -73,23 +73,39 @@ function App() {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
           />
-          <button className="btn-add" onClick={addProduct}>Salvar</button>
+          <button className="btn-add" onClick={addProduct}>
+            Salvar
+          </button>
         </div>
       </div>
 
       {message && <p className="msg-success">{message}</p>}
 
-      <ul >
+      <span className="division">
+        <h2 className="products-title">Lista de Produtos</h2> <hr />
+      </span>
+
+      <ul>
         {products.map((p) => (
           <div className="card-products">
-          <li  key={p.id}>
-            {p.name} <hr /> <p className="card-title">Preço </p>R$ {p.price} <br />
-            <button className="btn-edit" onClick={() => setEditingProduct(p)}>Editar</button>
-            <button className="btn-delete" onClick={() => deleteProduct(p.id)}>Deletar</button>
-          </li></div>
+            <li key={p.id}>
+              <span className="product-name"> {p.name} </span> <hr />{" "}
+              <p className="card-title">Preço </p>{" "}
+              <span className="product-price"> R$ {p.price} </span> <br />
+              <button className="btn-edit" onClick={() => setEditingProduct(p)}>
+                Editar
+              </button>
+              <button
+                className="btn-delete"
+                onClick={() => deleteProduct(p.id)}
+              >
+                Deletar
+              </button>
+            </li>
+          </div>
         ))}
         {editingProduct && (
-          <div>
+          <div className="product-edit">
             <h3>Editar produto</h3>
             <input
               value={editingProduct.name}

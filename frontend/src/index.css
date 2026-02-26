@@ -17,7 +17,7 @@ ul {
   list-style: none;
   display: flex;
   gap: 20px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .header {
@@ -98,6 +98,28 @@ ul {
   box-sizing: border-box;
 }
 
+.division {
+  display: flex;
+  flex-direction: row;
+  padding: 0 50px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.division hr {
+  height: 2px;
+  width: 100%;
+  border: none;
+  border-radius: 1%;
+  background-color: #221f1f;
+  opacity: 40%;
+}
+
+.products-title {
+  font-weight: 700;
+  font-size: 30px;
+}
+
 .card-products {
   align-items: center;
   margin-top: 10px;
@@ -105,16 +127,19 @@ ul {
   padding: 20px;
   background-color: #b3b3ac;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  width: 150px;
+  width: 200px;
   justify-content: center;
+  display: block;
 }
 
 .card-products hr {
-  width: 120px;
-  background-color: #757575;
+  width: 160px;
+  background-color: #6b6b6b;
   height: 2px;
   border: none;
   border-radius: 2px;
+  margin: 10px auto;
+  opacity: 50%;
 }
 
 li {
@@ -127,19 +152,65 @@ li {
 .card-products button {
   border-radius: 8px;
   height: 32px;
+  width: 45%;
   border: none;
-  display: flex;
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
   align-items: center;
-  flex-wrap: nowrap;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
 }
 
 .card-title,
-.card-products p.name {
+.product-name,
+.product-price {
   background-color: transparent;
+  display: flex;
+}
+
+.product-name {
   font-weight: 700;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.product-price {
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .btn-edit {
   background-color: #221f1f;
   color: #ccc;
+  margin-right: 8px;
+}
+
+.btn-edit:hover {
+  background-color: #616161;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #834444;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.product-edit input,
+.product-edit button {
+  border-radius: 6px;
+  border: 1px solid;
+  margin: 0 3px;
+  padding: 5px;
+}
+
+.product-edit button {
+  background-color: #221f1f;
+  color: #ccc;
+  border: none;
+}
+
+.product-edit button:hover {
+  background-color: #616161;
+  cursor: pointer;
 }
